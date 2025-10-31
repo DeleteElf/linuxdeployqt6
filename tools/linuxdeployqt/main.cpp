@@ -399,15 +399,14 @@ int main(int argc, char **argv)
     qDebug() << "appDirPath:" << appDirPath;
     qDebug() << "relativeBinPath:" << relativeBinPath;
 
-    //不需要去创建这个快捷方式
-//    QFile appRun(appDirPath + "/AppRun");
-//    if(appRun.exists()){
-//        qDebug() << "Keeping existing AppRun";
-//    } else {
-//        if (!QFile::link(relativeBinPath, appDirPath + "/AppRun")) {
-//            LogError() << "Could not create AppRun link";
-//        }
-//    }
+    QFile appRun(appDirPath + "/AppRun");
+    if(appRun.exists()){
+        qDebug() << "Keeping existing AppRun";
+    } else {
+        if (!QFile::link(relativeBinPath, appDirPath + "/AppRun")) {
+            LogError() << "Could not create AppRun link";
+        }
+    }
 
     /* Copy the desktop file in place, into the top level of the AppDir */
     if(desktopFile != ""){

@@ -23,4 +23,3 @@ linuxdeployqt CgTeamworkRD -qmldir=$PWD/../../app/gui -exclude-libs=libqsqlmimer
 #### 1.0.25.103101
 1. 修改主入口，支持linux glibc版本到2.39。
 2. 修改cmake版本到3.10。
-3. 不再生成快捷方式。
