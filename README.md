@@ -15,6 +15,7 @@ linuxdeployqt app -qmldir=$PWD/../../app/gui
 
 linuxdeployqt app -qmldir=$PWD/../../app/gui -no-plugins
 
+#排除掉数据库驱动，如果没有数据库请求要求的话，这边会报错，如果有要求，则需要先安装对应的数据库驱动才可以打入。
 linuxdeployqt CgTeamworkRD -qmldir=$PWD/../../app/gui -exclude-libs=libqsqlmimer,libqsqlmysql,libqsqlite,libqsqlodbc,libqsqlpsql
 ```
 
